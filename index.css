@@ -1,0 +1,18 @@
+body {
+    background-color: palegreen;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    border: 5px dashed navy;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.small-div {
+    background-color: white;
+    border: 1px dotted grey;
+    width: 20px;
+    height: 20px;
+}
