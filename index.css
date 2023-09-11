@@ -10,22 +10,21 @@ body {
     font-size: 20px;
     margin-bottom: 50px;
     padding: 20px;
-    background-color: rgb(193, 243, 99);
+    background-color: #34fc34;
     border-radius: 5%;
 }
 
 .grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 480px;
+    width: 400px;
+    height: 400px;
     margin: 20px;
+    border: 1px solid black;
+    display: grid; 
 }
 
-div {
+.small-div {
     background-color: white;
-    box-shadow: inset 1px 1px grey, inset -1px -1px grey;
-    width: 30px;
-    height: 30px;
+    border: 1px solid palegreen;
 }
 
 

@@ -19,34 +19,31 @@ pixelButton.addEventListener('click', () => {
     
     console.log("This is the dimension: " + numberDimension + " x " + numberDimension);
     
-})
-  
-
-/*
-
-
-
     function createContainer() {
         screen.appendChild(container);
-        for (let i = 1; i <= 256; i++) {
-            element = "div" + i;
-            //console.log(element);
-            element = document.createElement('div');
-            element.className = 'small-div';
-            container.appendChild(element);
+        for (let i = 0; i < dimension; i++) {
+            for (let j = 0; j < dimension; j++) {
+                container.style = "grid-template-rows: repeat(dimension, 1fr); grid-template-columns: repeat(dimension, 1fr)"
+                element = document.createElement('div');
+                element.className = 'small-div';
+                container.appendChild(element);
+            }    
         }
         return element;
     }
     createContainer();
 
-const divs = document.querySelectorAll('.small-div');
+    const divs = document.querySelectorAll('.small-div');
 
-divs.forEach((div) => {
-    div.addEventListener('mouseenter', function () {
-            this.style.backgroundColor = 'yellowgreen';
+    divs.forEach((div) => {
+        div.addEventListener('mouseenter', function () {
+                this.style.backgroundColor = '#34fc34';
+        });
+        div.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#34fc34';
+        });
     });
-    div.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = 'yellowgreen';
-    });
-});
- */
+})
+
+   
+
