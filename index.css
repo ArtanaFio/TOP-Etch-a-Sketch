@@ -6,10 +6,19 @@ body {
     align-items: center;
 }
 
+#pixels {
+    font-size: 20px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: rgb(193, 243, 99);
+    border-radius: 5%;
+}
+
 .grid-container {
     display: flex;
     flex-wrap: wrap;
     width: 480px;
+    margin: 20px;
 }
 
 div {
