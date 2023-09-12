@@ -9,7 +9,7 @@ container.remove();
 
 pixelButton.addEventListener('click', () => {
     function pressButton() {
-        ask = prompt("Type the dimension you want the square grid to be:", "0");
+        ask = prompt("How many squares do you want in each column and row?", "0");
         return ask;
     }
     const dimension = pressButton();
@@ -17,13 +17,14 @@ pixelButton.addEventListener('click', () => {
     console.log(numberDimension);
     console.log(typeof numberDimension);
     
-    console.log("This is the dimension: " + numberDimension + " x " + numberDimension);
+    console.log("This is the grid's dimensions: " + numberDimension + " x " + numberDimension);
     
     function createContainer() {
         screen.appendChild(container);
         for (let i = 0; i < dimension; i++) {
             for (let j = 0; j < dimension; j++) {
-                container.style = "grid-template-rows: repeat(dimension, 1fr); grid-template-columns: repeat(dimension, 1fr)"
+                container.style.gridTemplateRows = `repeat(${numberDimension}, 1fr)`;
+                container.style.gridTemplateColumns = `repeat(${numberDimension}, 1fr)`;
                 element = document.createElement('div');
                 element.className = 'small-div';
                 container.appendChild(element);

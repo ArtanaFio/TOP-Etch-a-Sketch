@@ -15,11 +15,11 @@ body {
 }
 
 .grid-container {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     margin: 20px;
     border: 1px solid black;
-    display: grid; 
+    display: inline-grid;
 }
 
 .small-div {
