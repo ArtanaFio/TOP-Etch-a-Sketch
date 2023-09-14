@@ -6,11 +6,13 @@ body {
     align-items: center;
 }
 
-#pixels,
-.restart {
-    font-size: 20px;
-    margin-bottom: 50px;
-    padding: 20px;
+#pixels {
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
     background-color: rgb(193, 243, 99);
     border-radius: 5%;
 }
@@ -19,14 +21,12 @@ body {
     width: 500px;
     height: 500px;
     margin: 20px;
-    display: inline-grid;
+    display: grid;
 }
 
-div {
+.small-div {
     background-color: white;
     box-shadow: inset 1px 1px grey, inset -1px -1px grey;
-    width: 30px;
-    height: 30px;
 }
 
 
