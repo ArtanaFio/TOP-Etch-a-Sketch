@@ -4,17 +4,28 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: rgb(2, 151, 2);
 }
 
 #pixels {
-    font-size: 30px;
+    font-size: 36px;
     color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
     font-weight: bold;
     letter-spacing: 5px;
     margin-bottom: 20px;
     padding: 10px;
     background-color: rgb(193, 243, 99);
     border-radius: 5%;
+    border-left-color:rgb(193, 243, 99);
+    border-top-color:rgb(193, 243, 99);
+    border-bottom-color:rgb(49, 252, 49);
+    border-right-color:rgb(49, 252, 49);
+}
+
+#pixels:hover {
+    background-color:rgb(184, 253, 57);
 }
 
 .grid-container {
@@ -26,7 +37,7 @@ body {
 
 .small-div {
     background-color: white;
-    box-shadow: inset 1px 1px grey, inset -1px -1px grey;
+    box-shadow: inset 0.5px 0.5px rgb(213, 247, 213), inset -0.5px -0.5px rgb(213, 247, 213);
 }
 
 

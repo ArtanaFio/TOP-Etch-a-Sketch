@@ -35,7 +35,6 @@ pixelButton.addEventListener('click', () => {
 
     function createSketchPad() {
         screen.appendChild(container);
-        container.style.border = "1px solid black";
         container.style.gridTemplateRows = `repeat(${dimension}, 1fr)`;
         container.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`;
 
