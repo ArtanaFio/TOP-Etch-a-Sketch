@@ -8,9 +8,22 @@ const pixelButton =document.getElementById('pixels');
 pixelButton.addEventListener('click', () => {
     container.innerHTML = '';
 
-    const ask = prompt("How many squares do you want in each column and row?", "0");
-    const dimension = parseInt(ask);
+    let dimension;
 
+    while (true) {
+        const ask = prompt("How many squares do you want in each column and row?", "0");
+        
+        dimension = parseInt(ask);
+
+        if (!isNaN(dimension) && dimension >= 1 && dimension <=100) {
+            console.log("valid number");
+            break;
+        } else {
+            alert("Please enter a number between 1 and 100.");
+            console.log("invalid number");
+        }
+    }
+    
     console.log("This is the grid's dimensions: " + dimension + " x " + dimension);
 
     function createSketchPad() {
