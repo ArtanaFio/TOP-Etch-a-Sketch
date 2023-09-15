@@ -1,12 +1,22 @@
 // Create a 16 x 16 grid of div elements inside "grid-container"
 let element;
 
-const screen = document.querySelector('body');
+const sketchSide = document.querySelector('.sketch');
+const panel = document.querySelector('.left');
 const container = document.querySelector('.grid-container');
 const pixelButton =document.getElementById('pixels');
+const clearButton = document.getElementById('clear');
+const rainbowButton = document.getElementById('colors');
+const originalButton = document.getElementById('original');
+
+
 
 pixelButton.addEventListener('click', () => {
     container.innerHTML = '';
+    clearButton.style.display = 'block';
+    originalButton.style.display = 'block';
+    rainbowButton.style.display = 'block';
+
 
     let dimension;
 
@@ -34,7 +44,7 @@ pixelButton.addEventListener('click', () => {
     console.log("This is the grid's dimensions: " + dimension + " x " + dimension);
 
     function createSketchPad() {
-        screen.appendChild(container);
+        sketchSide.appendChild(container);
         container.style.gridTemplateRows = `repeat(${dimension}, 1fr)`;
         container.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`;
 
@@ -55,8 +65,66 @@ pixelButton.addEventListener('click', () => {
                 this.style.backgroundColor = '#34fc34';
         });
     });
+
+    clearButton.addEventListener('click', () => {
+        divs.forEach((div) => {
+            div.style.backgroundColor = 'white';
+        });
+    });
+
+    originalButton.addEventListener('click', () => {
+        divs.forEach((div) => {
+            div.addEventListener('mouseenter', function () {
+                    this.style.backgroundColor = '#34fc34';
+            });
+            div.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#34fc34';
+            });
+        });
+    }); 
     
+    rainbowButton.addEventListener('click', () => {
+        const colorsArray = ["red", "orange", "yellow", "lime", "cyan", "blue", "indigo", "purple", "hotpink"];
+        const color = Math.floor(Math.random() * colorsArray.length);
+        
+        function assignColor() {
+            if (color === 0) {
+                return "red";
+            } else if (color === 1) {
+                return "orange";
+            } else if (color === 2) {
+                return "yellow";
+            } else if (color === 3) {
+                return "lime";
+            } else if (color === 4) {
+                return "cyan";
+            } else if (color === 5) {
+                return "blue";
+            } else if (color === 6) {
+                return "indigo";
+            } else if (color === 7) {
+                return "purple";
+            } else if (color === 8) {
+                return "hotpink";
+            } else {
+                return "Something went wrong when assigning colors";
+            }
+        };
+        assignColor();
+        console.log(assignColor());
+        
+        divs.forEach((div) => {
+            div.addEventListener('mouseenter', function () {
+                    this.style.backgroundColor = assignColor();
+            });
+            div.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = assignColor();
+            });
+        });
+    }); 
 })
+
+
 
 
 

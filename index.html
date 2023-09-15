@@ -7,9 +7,20 @@
         <script src="index.js" defer></script>
     </head>
     <body>
-        <header><h1>Etch-a-Sketch</h1></header>
-        <h3>Create your own by pressing the button!</h3>
-        <button id="pixels">New Grid</button>
-        <div class="grid-container"></div>
+        <section class="left">
+            <header><h1>Etch-a-Sketch</h1></header>
+            <h3>Choose how you want your grid to be by pressing the button below!</h3>
+            <button id="pixels">New Grid</button>
+            <section class="options">
+                <button id="clear">Erase</button>
+                <button id="original">Original</button>
+                <button id="colors">Rainbow!</button>
+            </section>
+        </section>
+        <div class="sketch">
+            <div class="grid-container"></div>
+            <p>Etch-a-Sketch</p>
+        </div>
+        
     </body>
 </html>
