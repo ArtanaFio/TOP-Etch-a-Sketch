@@ -51,7 +51,7 @@ pixelButton.addEventListener('click', () => {
         for (let i = 0; i < dimension * dimension; i++) {
             element = document.createElement('div');
             element.classList.add('small-div');
-        container.appendChild(element);
+            container.appendChild(element);
         }   
     }
     createSketchPad();
@@ -59,10 +59,10 @@ pixelButton.addEventListener('click', () => {
     const divs = document.querySelectorAll('.small-div');
     divs.forEach((div) => {
         div.addEventListener('mouseenter', function () {
-                this.style.backgroundColor = '#34fc34';
+                this.style.backgroundColor = 'lime';
         });
         div.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '#34fc34';
+                this.style.backgroundColor = 'lime';
         });
     });
 
@@ -75,50 +75,65 @@ pixelButton.addEventListener('click', () => {
     originalButton.addEventListener('click', () => {
         divs.forEach((div) => {
             div.addEventListener('mouseenter', function () {
-                    this.style.backgroundColor = '#34fc34';
+                    this.style.backgroundColor = 'lime';
             });
             div.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = '#34fc34';
+                    this.style.backgroundColor = 'lime';
             });
         });
     }); 
     
     rainbowButton.addEventListener('click', () => {
-        const colorsArray = ["red", "orange", "yellow", "lime", "cyan", "blue", "indigo", "purple", "hotpink"];
-        const color = Math.floor(Math.random() * colorsArray.length);
-        
-        function assignColor() {
-            if (color === 0) {
-                return "red";
-            } else if (color === 1) {
-                return "orange";
-            } else if (color === 2) {
-                return "yellow";
-            } else if (color === 3) {
-                return "lime";
-            } else if (color === 4) {
-                return "cyan";
-            } else if (color === 5) {
-                return "blue";
-            } else if (color === 6) {
-                return "indigo";
-            } else if (color === 7) {
-                return "purple";
-            } else if (color === 8) {
-                return "hotpink";
-            } else {
-                return "Something went wrong when assigning colors";
-            }
-        };
-        assignColor();
-        console.log(assignColor());
+        const colorsArray = ["magenta", "orange", "yellow", "lime", "cyan", "violet", "hotpink"];
         
         divs.forEach((div) => {
             div.addEventListener('mouseenter', function () {
+                const color = Math.floor(Math.random() * colorsArray.length);        
+                function assignColor() {
+                    if (color === 0) {
+                        return "#ff008c";
+                    } else if (color === 1) {
+                        return "orange";
+                    } else if (color === 2) {
+                        return "yellow";
+                    } else if (color === 3) {
+                        return "lime";
+                    } else if (color === 4) {
+                        return "cyan";
+                    } else if (color === 5) {
+                        return "#c567fc";
+                    } else if (color === 6) {
+                        return "hotpink";
+                    } else {
+                        return "Something went wrong when assigning colors";
+                    }
+                };
+                console.log("mouseenter: " + assignColor());
                     this.style.backgroundColor = assignColor();
             });
             div.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = assignColor();
+                const color = Math.floor(Math.random() * colorsArray.length);
+                function assignColor() {
+                    if (color === 0) {
+                        return "#ff008c";
+                    } else if (color === 1) {
+                        return "orange";
+                    } else if (color === 2) {
+                        return "yellow";
+                    } else if (color === 3) {
+                        return "lime";
+                    } else if (color === 4) {
+                        return "cyan";
+                    } else if (color === 5) {
+                        return "#c567fc";
+                    } else if (color === 6) {
+                        return "hotpink";
+                    } else {
+                        return "Something went wrong when assigning colors";
+                    }
+                };
+                console.log("mouseleave: " + assignColor());
+                this.style.backgroundColor = assignColor();
             });
         });
     }); 

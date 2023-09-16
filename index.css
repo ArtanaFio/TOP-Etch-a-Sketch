@@ -120,7 +120,7 @@ p {
     padding: 5px;
     border-radius: 5%;
     color: white;
-    background-image: linear-gradient(to right, red, orange, yellow, lime, cyan, blue, indigo, purple, hotpink);
+    background-image: linear-gradient(to right, #ff008c, orange, yellow, lime, cyan, #c567fc, hotpink);
     border-color: transparent;
     display: none;
 }
@@ -134,13 +134,13 @@ p {
     padding: 5px;
     border-radius: 5%;
     background-color: white;
-    color: #34fc34;
+    color: lime;
     border-color: transparent;
     display: none;
 }
 
 #original:hover {
-    border-color: #34fc34;
+    border-color: lime;
 }
 
 
