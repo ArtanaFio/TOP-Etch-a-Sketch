@@ -8,6 +8,7 @@ const pixelButton =document.getElementById('pixels');
 const clearButton = document.getElementById('clear');
 const rainbowButton = document.getElementById('colors');
 const originalButton = document.getElementById('original');
+const markerButton = document.getElementById('darken');
 
 
 
@@ -18,6 +19,7 @@ pixelButton.addEventListener('click', () => {
     clearButton.style.display = 'block';
     originalButton.style.display = 'block';
     rainbowButton.style.display = 'block';
+    markerButton.style.display = 'block';
 
 
     let dimension;
@@ -124,7 +126,20 @@ pixelButton.addEventListener('click', () => {
                 console.log("mouseleave: " + this.style.backgroundColor);
             });
         });
-    }); 
+    });
+    
+    markerButton.addEventListener('click', () => {
+        divs.forEach((div) => {
+            div.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = 'black';
+                this.style.opacity = '10%';
+            });
+            div.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'black';
+                this.style.opacity = '20%';
+            });
+        });
+    });
 })
 
 
