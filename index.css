@@ -28,7 +28,7 @@ body {
 
 h1 {
     padding: 50px;
-    font-size: 48pt;
+    font-size: 40pt;
     font-weight: bold;
     color: rgb(104, 247, 104);
     text-shadow: 3px 3px rgb(69, 158, 69);
@@ -48,10 +48,11 @@ h3 {
 
 p {
     position: absolute;
-    margin-top: 540px;
-    margin-left: 200px;
+    margin-top: -500px;
+    margin-left: 170px;
     font-size: 36pt;
     font-family: 'Karumbi';
+    letter-spacing: 5px;
     color: gold;
     text-shadow: 2px 2px rgb(161, 137, 0);
 
@@ -90,7 +91,29 @@ p {
     margin: 10px;
     display: grid;
     border: 80px solid rgb(2, 151, 2);
+    border-bottom-width: 150px;
     border-radius: 5%;
+}
+
+.left-circle,
+.right-circle {
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    box-shadow: inset -7px -7px lightgrey;
+    border-radius: 50%;
+    border: none;
+}
+
+.left-circle {
+    margin-top: 477px;
+    margin-left: 50px;
+}
+
+.right-circle {
+    margin-top: 477px;
+    margin-left: 430px;
 }
 
 .small-div {

@@ -12,6 +12,8 @@ const originalButton = document.getElementById('original');
 
 
 pixelButton.addEventListener('click', () => {
+    console.log('You pressed the "New Grid" Button');
+    console.log("You're using original color");
     container.innerHTML = '';
     clearButton.style.display = 'block';
     originalButton.style.display = 'block';
@@ -67,6 +69,7 @@ pixelButton.addEventListener('click', () => {
     });
 
     clearButton.addEventListener('click', () => {
+        console.log("You cleared the grid");
         divs.forEach((div) => {
             div.style.backgroundColor = 'white';
         });
@@ -81,14 +84,18 @@ pixelButton.addEventListener('click', () => {
                     this.style.backgroundColor = 'lime';
             });
         });
+        console.log("You are using the original color");
     }); 
     
     rainbowButton.addEventListener('click', () => {
+        console.log("You'red using the changing rainbow color");
         const colorsArray = ["magenta", "orange", "yellow", "lime", "cyan", "violet", "hotpink"];
         
+
         divs.forEach((div) => {
             div.addEventListener('mouseenter', function () {
                 const color = Math.floor(Math.random() * colorsArray.length);        
+                
                 function assignColor() {
                     if (color === 0) {
                         return "#ff008c";
@@ -108,32 +115,13 @@ pixelButton.addEventListener('click', () => {
                         return "Something went wrong when assigning colors";
                     }
                 };
-                console.log("mouseenter: " + assignColor());
-                    this.style.backgroundColor = assignColor();
+                randomColor = assignColor();
+                this.style.backgroundColor = randomColor;
+                console.log("mouseenter: " + this.style.backgroundColor);
             });
             div.addEventListener('mouseleave', function() {
-                const color = Math.floor(Math.random() * colorsArray.length);
-                function assignColor() {
-                    if (color === 0) {
-                        return "#ff008c";
-                    } else if (color === 1) {
-                        return "orange";
-                    } else if (color === 2) {
-                        return "yellow";
-                    } else if (color === 3) {
-                        return "lime";
-                    } else if (color === 4) {
-                        return "cyan";
-                    } else if (color === 5) {
-                        return "#c567fc";
-                    } else if (color === 6) {
-                        return "hotpink";
-                    } else {
-                        return "Something went wrong when assigning colors";
-                    }
-                };
-                console.log("mouseleave: " + assignColor());
-                this.style.backgroundColor = assignColor();
+                this.style.backgroundColor = randomColor;
+                console.log("mouseleave: " + this.style.backgroundColor);
             });
         });
     }); 
