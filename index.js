@@ -8,18 +8,17 @@ const pixelButton =document.getElementById('pixels');
 const clearButton = document.getElementById('clear');
 const rainbowButton = document.getElementById('colors');
 const originalButton = document.getElementById('original');
-const markerButton = document.getElementById('darken');
+const pencilButton = document.getElementById('darken');
 
 
 
 pixelButton.addEventListener('click', () => {
-    console.log('You pressed the "New Grid" Button');
     console.log("You're using original color");
     container.innerHTML = '';
     clearButton.style.display = 'block';
     originalButton.style.display = 'block';
     rainbowButton.style.display = 'block';
-    markerButton.style.display = 'block';
+    pencilButton.style.display = 'block';
 
 
     let dimension;
@@ -31,7 +30,6 @@ pixelButton.addEventListener('click', () => {
             dimension = parseInt(ask);
 
             if (!isNaN(dimension) && dimension >= 1 && dimension <=100) {
-                console.log("valid number");
                 break;
             } else {
                 alert("Please enter a number between 1 and 100.");
@@ -55,12 +53,15 @@ pixelButton.addEventListener('click', () => {
         for (let i = 0; i < dimension * dimension; i++) {
             element = document.createElement('div');
             element.classList.add('small-div');
+            element.style.backgroundColor = "white";
             container.appendChild(element);
-        }   
+        }
     }
     createSketchPad();
 
+
     const divs = document.querySelectorAll('.small-div');
+
     divs.forEach((div) => {
         div.addEventListener('mouseenter', function () {
                 this.style.backgroundColor = 'lime';
@@ -119,38 +120,28 @@ pixelButton.addEventListener('click', () => {
                 };
                 randomColor = assignColor();
                 this.style.backgroundColor = randomColor;
-                console.log("mouseenter: " + this.style.backgroundColor);
             });
             div.addEventListener('mouseleave', function() {
                 this.style.backgroundColor = randomColor;
-                console.log("mouseleave: " + this.style.backgroundColor);
             });
         });
     });
     
-    markerButton.addEventListener('click', () => {
+    pencilButton.addEventListener('click', () => {
         divs.forEach((div) => {
+            let opacity = 0.1;
+            let divOpacity = `rgba(0, 0, 0, ${opacity})`;
             div.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = 'black';
-                this.style.opacity = '10%';
+                opacity += 0.1;
+                if (opacity > 1) {
+                    opacity = 1;
+                }
+                divOpacity = `rgba(0, 0, 0, ${opacity}`;
+                this.style.backgroundColor =divOpacity;
             });
             div.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = 'black';
-                this.style.opacity = '20%';
+                this.style.backgroundColor = divOpacity;
             });
         });
     });
 })
-
-
-
-
-
-
-
-
-
-
-
-   
-
