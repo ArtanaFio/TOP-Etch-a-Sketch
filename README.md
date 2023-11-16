@@ -10,3 +10,8 @@ THINGS TO FIX:
     the event listeners with events "mouseenter" and "mouseleave" will not detect all the div elements if the 
     mouse moves too quickly.
 --- Create a button that darkens a div element's background color by 10% each time the mouse hovers over it.
+
+9/18/2023 3:32PM
+--- Successfully coded the rainbow function
+--- Created the pencil button to increase a div element's background color by 10% until it 
+    reaches 100% when the mouse hovers over it.

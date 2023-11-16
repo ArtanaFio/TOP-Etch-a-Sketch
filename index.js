@@ -63,10 +63,10 @@ pixelButton.addEventListener('click', () => {
     const divs = document.querySelectorAll('.small-div');
 
     divs.forEach((div) => {
-        div.addEventListener('mouseenter', function () {
+        div.addEventListener('mouseover', function () {
                 this.style.backgroundColor = 'lime';
         });
-        div.addEventListener('mouseleave', function() {
+        div.addEventListener('mouseout', function() {
                 this.style.backgroundColor = 'lime';
         });
     });
@@ -80,10 +80,10 @@ pixelButton.addEventListener('click', () => {
 
     originalButton.addEventListener('click', () => {
         divs.forEach((div) => {
-            div.addEventListener('mouseenter', function () {
+            div.addEventListener('mouseover', function () {
                     this.style.backgroundColor = 'lime';
             });
-            div.addEventListener('mouseleave', function() {
+            div.addEventListener('mouseout', function() {
                     this.style.backgroundColor = 'lime';
             });
         });
@@ -96,7 +96,7 @@ pixelButton.addEventListener('click', () => {
         
 
         divs.forEach((div) => {
-            div.addEventListener('mouseenter', function () {
+            div.addEventListener('mouseover', function () {
                 const color = Math.floor(Math.random() * colorsArray.length);        
                 
                 function assignColor() {
@@ -121,7 +121,7 @@ pixelButton.addEventListener('click', () => {
                 randomColor = assignColor();
                 this.style.backgroundColor = randomColor;
             });
-            div.addEventListener('mouseleave', function() {
+            div.addEventListener('mouseout', function() {
                 this.style.backgroundColor = randomColor;
             });
         });
@@ -131,7 +131,7 @@ pixelButton.addEventListener('click', () => {
         divs.forEach((div) => {
             let opacity = 0.1;
             let divOpacity = `rgba(0, 0, 0, ${opacity})`;
-            div.addEventListener('mouseenter', function() {
+            div.addEventListener('mouseover', function() {
                 opacity += 0.1;
                 if (opacity > 1) {
                     opacity = 1;
@@ -139,7 +139,7 @@ pixelButton.addEventListener('click', () => {
                 divOpacity = `rgba(0, 0, 0, ${opacity}`;
                 this.style.backgroundColor =divOpacity;
             });
-            div.addEventListener('mouseleave', function() {
+            div.addEventListener('mouseout', function() {
                 this.style.backgroundColor = divOpacity;
             });
         });
