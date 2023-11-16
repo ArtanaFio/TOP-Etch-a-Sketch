@@ -15,3 +15,8 @@ THINGS TO FIX:
 --- Successfully coded the rainbow function
 --- Created the pencil button to increase a div element's background color by 10% until it 
     reaches 100% when the mouse hovers over it.
+
+11/16/2023 5:26 PM
+--- Need to move buttons around. Considering moving the buttons back to the "left" 
+    div.
+--- Need to include event listeners for touch to work with mobile devices.

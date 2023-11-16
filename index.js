@@ -5,11 +5,9 @@ const leftSide = document.querySelector('.left');
 const directions = document.querySelector('h3');
 const sketchSide = document.querySelector('.sketch');
 const panel = document.querySelector('.left');
+const greenBorders = document.querySelector('.borders');
 const container = document.querySelector('.grid-container');
-const bottomBar = document.querySelector('.bar');
-const leftKnob = document.querySelector('.left-circle');
-const label = document.querySelector('p');
-const rightKnob = document.querySelector('.right-circle');
+const bottomDisplay = document.querySelector('img');
 const functionButtons = document.querySelector('.functions');
 const pixelButton =document.getElementById('pixels');
 const clearButton = document.getElementById('clear');
@@ -50,16 +48,14 @@ pixelButton.addEventListener('click', () => {
     console.log("This is the grid's dimensions: " + dimension + " x " + dimension);
 
     function createSketchPad() {
-        sketchSide.appendChild(container);
-        bottomBar.appendChild(leftKnob);
-        bottomBar.appendChild(label);
-        bottomBar.appendChild(rightKnob);
+        greenBorders.appendChild(container);
+        greenBorders.appendChild(bottomDisplay);
 
         clearButton.style.display = 'block';
         originalButton.style.display = 'block';
         rainbowButton.style.display = 'block';
         pencilButton.style.display = 'block';
-        
+
         functionButtons.appendChild(clearButton);
         options.appendChild(originalButton);
         options.appendChild(rainbowButton);
