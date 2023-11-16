@@ -1,11 +1,19 @@
 // Create a 16 x 16 grid of div elements inside "grid-container"
 let element;
 
+const leftSide = document.querySelector('.left');
+const directions = document.querySelector('h3');
 const sketchSide = document.querySelector('.sketch');
 const panel = document.querySelector('.left');
 const container = document.querySelector('.grid-container');
+const bottomBar = document.querySelector('.bar');
+const leftKnob = document.querySelector('.left-circle');
+const label = document.querySelector('p');
+const rightKnob = document.querySelector('.right-circle');
+const functionButtons = document.querySelector('.functions');
 const pixelButton =document.getElementById('pixels');
 const clearButton = document.getElementById('clear');
+const options = document.querySelector('.options');
 const rainbowButton = document.getElementById('colors');
 const originalButton = document.getElementById('original');
 const pencilButton = document.getElementById('darken');
@@ -15,11 +23,7 @@ const pencilButton = document.getElementById('darken');
 pixelButton.addEventListener('click', () => {
     console.log("You're using original color");
     container.innerHTML = '';
-    clearButton.style.display = 'block';
-    originalButton.style.display = 'block';
-    rainbowButton.style.display = 'block';
-    pencilButton.style.display = 'block';
-
+    directions.style.display = 'none';
 
     let dimension;
 
@@ -47,6 +51,19 @@ pixelButton.addEventListener('click', () => {
 
     function createSketchPad() {
         sketchSide.appendChild(container);
+        bottomBar.appendChild(leftKnob);
+        bottomBar.appendChild(label);
+        bottomBar.appendChild(rightKnob);
+
+        clearButton.style.display = 'block';
+        originalButton.style.display = 'block';
+        rainbowButton.style.display = 'block';
+        pencilButton.style.display = 'block';
+        
+        functionButtons.appendChild(clearButton);
+        options.appendChild(originalButton);
+        options.appendChild(rainbowButton);
+        options.appendChild(pencilButton);
         container.style.gridTemplateRows = `repeat(${dimension}, 1fr)`;
         container.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`;
 

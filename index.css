@@ -34,18 +34,13 @@ body {
     border: 5px solid red; */
 }
 
-.options {
-    display: flex;
-    flex-direction: column;
-}
-
 h1 {
-    margin: auto 0;
-    padding: 3vmax;
+    margin: 5vmin 0;
+    padding: 3.5vmax;
     font-size: 5vmax;
     font-weight: bold;
     color: rgb(104, 247, 104);
-    text-shadow: 0.5vmin 0.5vmin rgb(69, 158, 69);
+    text-shadow: 0.4vmin 0.4vmin rgb(69, 158, 69);
     text-decoration: 0.3vmax underline wavy;
     text-underline-offset: 0.3vmax;
     letter-spacing: 0.4vmin;
@@ -56,54 +51,72 @@ h1 {
 }
 
 h3 {
-    margin: 0;
+    margin: 0 0 5vmin 0;
     color:rgb(69, 158, 69);
     font-size: 1rem;
     font-style: italic;
     text-align: center;
 }
 
-p {
-    font-size: 2rem;
+.borders {
+    width: 33vw;
+    min-width: 13rem;
+    height: 39vw;
+    min-height: 15.5rem;
+    background: rgb(2, 151, 2);
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.grid-container {
+    background-color: white;
+    display: grid;
+    width: 30vw;
+    min-width: 12rem;
+    height: 30vw;
+    min-height: 12rem;
+    /*border-left: 4vmin solid rgb(2, 151, 2);
+    border-right: 4vmin solid rgb(2, 151, 2);
+    border-top: 4vmin solid rgb(2, 151, 2); 
+    border-bottom: 15vmin solid rgb(2, 151, 2);
+    border-radius: 5%;*/
+    margin-bottom: 0;
+}
+
+img {
+    width: 33vw;
+    min-width: 13rem;
+}
+
+/*
+.bar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22.5vmax;
+}*/
+
+p { 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 8vmin;
     font-family: 'Karumbi';
     color: gold;
     text-shadow: 2px 2px rgb(161, 137, 0);
 
 }
 
-.grid-container { /* Fix the border's size in terms of viewport units */
-    background-color: white;
-    display: grid;
-    width: 25vw;
-    min-width: 13rem;
-    height: 25vw;
-    min-height: 13rem;
-    border-left: 4vmin solid rgb(2, 151, 2);
-    border-right: 4vmin solid rgb(2, 151, 2);
-    border-top: 4vmin solid rgb(2, 151, 2); 
-    border-bottom: 15vmin solid rgb(2, 151, 2);
-    border-radius: 5%;
-}
-
 .left-circle,
 .right-circle {
-    position: absolute;
     background-color: white;
-    width: 100px;
-    height: 100px;
-    box-shadow: inset -7px -7px lightgrey;
+    width: 5vmax;
+    height: 5vmax;
+    box-shadow: inset -0.5vmax -0.5vmax lightgrey;
     border-radius: 50%;
     border: none;
-}
-
-.left-circle {
-    margin-top: 477px;
-    margin-left: 50px;
-}
-
-.right-circle {
-    margin-top: 477px;
-    margin-left: 430px;
 }
 
 .small-div {
@@ -137,8 +150,17 @@ p {
     -webkit-text-stroke-color: white;
 }
 
+
+.options,
+.functions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
 .selections {
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding: 0.25rem;
     border-radius: 5%;
 }
@@ -150,6 +172,7 @@ p {
     border-top-color:rgb(2, 151, 2);
     border-bottom-color:rgb(49, 252, 49);
     border-right-color:rgb(49, 252, 49);
+    display: none;
 }
 
 #clear:hover {
@@ -160,6 +183,7 @@ p {
     color: white;
     background-image: linear-gradient(to right, #ff008c, orange, yellow, lime, cyan, #c567fc, hotpink);
     border-color: transparent;
+    display: none;
 }
 
 #colors:hover {
@@ -170,6 +194,7 @@ p {
     background-color: white;
     color: lime;
     border-color: transparent;
+    display: none;
 }
 
 #original:hover {
@@ -181,6 +206,7 @@ p {
     color: black;
     background-image: linear-gradient(to right, white, grey, white);
     border-color: transparent;
+    display: none;
 }
 
 #darken:hover {
