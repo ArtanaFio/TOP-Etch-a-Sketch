@@ -1,6 +1,12 @@
 # TOP-Etch-a-Sketch
 Create a virtual etch-a-sketch.
 
+Images:
+
+Etch-a-Sketch display
+    file-name: bottom_display.png
+    creator: Niada Niederhauser Roble
+
 
 THINGS TO FIX:
 
@@ -20,4 +26,10 @@ THINGS TO FIX:
 --- Need to move buttons around. Considering moving the buttons back to the "left" 
     div.
 --- Need to include event listeners for touch to work with mobile devices.
---- Need to apply some type of transition from an "introduction" screen to the on-screen Etch-a-Sketch
+--- Need to apply some type of transition from an "introduction" screen to the on-screen Etch-a-Sketch.
+
+11/17/2023 12:29 PM
+--- Moved all buttons to the "left" div and restyled them.
+--- Used arrow functions and removed "mouseout" event handlers to make JavaScript code clearer.
+--- Need to include event listeners for touch to work with mobile devices.
+--- Need to apply some type of transition from an "introduction" screen to the on-screen Etch-a-Sketch.

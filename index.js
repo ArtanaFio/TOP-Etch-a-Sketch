@@ -9,7 +9,8 @@ const greenBorders = document.querySelector('.borders');
 const container = document.querySelector('.grid-container');
 const bottomDisplay = document.querySelector('img');
 const functionButtons = document.querySelector('.functions');
-const pixelButton =document.getElementById('pixels');
+const pixelButton = document.getElementById('pixels');
+const appearButtons = document.querySelectorAll('.opt');
 const clearButton = document.getElementById('clear');
 const options = document.querySelector('.options');
 const rainbowButton = document.getElementById('colors');
@@ -41,8 +42,6 @@ pixelButton.addEventListener('click', () => {
             console.log("Not a number")
             alert("Please enter a valid number.");
         }
-        
-        
     }
     
     console.log("This is the grid's dimensions: " + dimension + " x " + dimension);
@@ -50,16 +49,16 @@ pixelButton.addEventListener('click', () => {
     function createSketchPad() {
         greenBorders.appendChild(container);
         greenBorders.appendChild(bottomDisplay);
-
-        clearButton.style.display = 'block';
-        originalButton.style.display = 'block';
-        rainbowButton.style.display = 'block';
-        pencilButton.style.display = 'block';
-
         functionButtons.appendChild(clearButton);
         options.appendChild(originalButton);
         options.appendChild(rainbowButton);
         options.appendChild(pencilButton);
+
+        appearButtons.forEach((button) => {
+            button.style.display = 'block';
+        });
+
+        
         container.style.gridTemplateRows = `repeat(${dimension}, 1fr)`;
         container.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`;
 
@@ -71,7 +70,6 @@ pixelButton.addEventListener('click', () => {
         }
     }
     createSketchPad();
-
 
     const divs = document.querySelectorAll('.small-div');
 
@@ -87,7 +85,6 @@ pixelButton.addEventListener('click', () => {
             div.style.backgroundColor = 'white';
         });
     });
-
 
     originalButton.addEventListener('click', () => {
         divs.forEach((div) => {
@@ -141,7 +138,7 @@ pixelButton.addEventListener('click', () => {
                     opacity = 1;
                 }
                 divOpacity = `rgba(0, 0, 0, ${opacity}`;
-                div.style.backgroundColor =divOpacity;
+                div.style.backgroundColor = divOpacity;
             });
         });
     });
