@@ -10,17 +10,18 @@
     <body>
         <section class="left">
             <header><h1>Etch-a-Sketch</h1></header>
-            <h3>Choose the dimensions of your square grid by pressing the button below!</h3>
-            <section class="functions">
+            <button type="button" id="start">Ready to draw?</button>
+            <h3 class="none">Choose the dimensions of your square grid by pressing the button below!</h3>
+            <section id="functions" class="none">
                 <button type="button" id="pixels" class="selections">New Grid</button>
                 <button type="button" id="clear" class="selections opt">Erase</button></section>
-            <section class="options">
+            <section class="options none">
                 <button type="button" id="original" class="selections opt">Original</button>
                 <button type="button" id="colors" class="selections opt">Rainbow!</button>
                 <button type="button" id="darken" class="selections opt">Pencil</button>
             </section>
         </section>
-        <div class="sketch">
+        <div class="sketch none">
             <div class="borders">
                 <div class="grid-container"></div>
                 <img alt="Etch-a-Sketch display" src="bottom_display.png">

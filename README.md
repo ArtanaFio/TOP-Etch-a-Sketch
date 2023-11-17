@@ -32,4 +32,7 @@ THINGS TO FIX:
 --- Moved all buttons to the "left" div and restyled them.
 --- Used arrow functions and removed "mouseout" event handlers to make JavaScript code clearer.
 --- Need to include event listeners for touch to work with mobile devices.
---- Need to apply some type of transition from an "introduction" screen to the on-screen Etch-a-Sketch.
+
+11/17/2023 4:22 PM
+--- Created a start button that disappears when clicked and reveals the on-screen Etch-a-Sketch and the pixelButton.
+--- Need to include event listeners for touch to work with mobile devices.

@@ -1,14 +1,16 @@
 // Create a 16 x 16 grid of div elements inside "grid-container"
 let element;
 
+const invisibleElements = document.querySelectorAll('.none');
 const leftSide = document.querySelector('.left');
+const startButton = document.getElementById('start');
 const directions = document.querySelector('h3');
 const sketchSide = document.querySelector('.sketch');
 const panel = document.querySelector('.left');
 const greenBorders = document.querySelector('.borders');
 const container = document.querySelector('.grid-container');
 const bottomDisplay = document.querySelector('img');
-const functionButtons = document.querySelector('.functions');
+const functionButtons = document.getElementById('functions');
 const pixelButton = document.getElementById('pixels');
 const appearButtons = document.querySelectorAll('.opt');
 const clearButton = document.getElementById('clear');
@@ -17,12 +19,19 @@ const rainbowButton = document.getElementById('colors');
 const originalButton = document.getElementById('original');
 const pencilButton = document.getElementById('darken');
 
-
+startButton.addEventListener('click', () => {
+    startButton.remove();
+    invisibleElements.forEach((element) => {
+        element.classList.remove('none');
+        sketchSide.classList.add('flex');
+        functionButtons.classList.add('grid-erase');
+    })
+})
 
 pixelButton.addEventListener('click', () => {
     console.log("You're using original color");
     container.innerHTML = '';
-    directions.style.display = 'none';
+    directions.classList.add('none');
 
     let dimension;
 
