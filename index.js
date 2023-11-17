@@ -76,11 +76,8 @@ pixelButton.addEventListener('click', () => {
     const divs = document.querySelectorAll('.small-div');
 
     divs.forEach((div) => {
-        div.addEventListener('mouseover', function () {
-                this.style.backgroundColor = 'lime';
-        });
-        div.addEventListener('mouseout', function() {
-                this.style.backgroundColor = 'lime';
+        div.addEventListener('mouseover', () => {
+            div.style.backgroundColor = 'lime';
         });
     });
 
@@ -91,13 +88,11 @@ pixelButton.addEventListener('click', () => {
         });
     });
 
+
     originalButton.addEventListener('click', () => {
         divs.forEach((div) => {
-            div.addEventListener('mouseover', function () {
-                    this.style.backgroundColor = 'lime';
-            });
-            div.addEventListener('mouseout', function() {
-                    this.style.backgroundColor = 'lime';
+            div.addEventListener('mouseover', () => {
+                div.style.backgroundColor = 'lime';
             });
         });
         console.log("You are using the original color");
@@ -107,9 +102,8 @@ pixelButton.addEventListener('click', () => {
         console.log("You'red using the changing rainbow color");
         const colorsArray = ["magenta", "orange", "yellow", "lime", "cyan", "violet", "hotpink"];
         
-
         divs.forEach((div) => {
-            div.addEventListener('mouseover', function () {
+            div.addEventListener('mouseover', () => {
                 const color = Math.floor(Math.random() * colorsArray.length);        
                 
                 function assignColor() {
@@ -132,10 +126,7 @@ pixelButton.addEventListener('click', () => {
                     }
                 };
                 randomColor = assignColor();
-                this.style.backgroundColor = randomColor;
-            });
-            div.addEventListener('mouseout', function() {
-                this.style.backgroundColor = randomColor;
+                div.style.backgroundColor = randomColor;
             });
         });
     });
@@ -144,16 +135,13 @@ pixelButton.addEventListener('click', () => {
         divs.forEach((div) => {
             let opacity = 0.1;
             let divOpacity = `rgba(0, 0, 0, ${opacity})`;
-            div.addEventListener('mouseover', function() {
+            div.addEventListener('mouseover', () => {
                 opacity += 0.1;
                 if (opacity > 1) {
                     opacity = 1;
                 }
                 divOpacity = `rgba(0, 0, 0, ${opacity}`;
-                this.style.backgroundColor =divOpacity;
-            });
-            div.addEventListener('mouseout', function() {
-                this.style.backgroundColor = divOpacity;
+                div.style.backgroundColor =divOpacity;
             });
         });
     });

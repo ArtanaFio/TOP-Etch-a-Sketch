@@ -20,3 +20,4 @@ THINGS TO FIX:
 --- Need to move buttons around. Considering moving the buttons back to the "left" 
     div.
 --- Need to include event listeners for touch to work with mobile devices.
+--- Need to apply some type of transition from an "introduction" screen to the on-screen Etch-a-Sketch
