@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
 html {
     font-size: 20pt;
 }
@@ -23,6 +25,7 @@ body {
 }
 
 #start {
+    cursor: pointer;
     color: white;;
     margin-top: 15vh;
     width: 80vmin;
@@ -113,22 +116,19 @@ h1 {
 h3 {
     margin: 0 0 5vmin 0;
     color:rgb(69, 158, 69);
-    font-size: 1rem;
+    font-size: 5vmin;
     font-style: italic;
     text-align: center;
 }
 
 .borders {
-    width: 33vw;
-    min-width: 13rem;
-    height: 39vw;
-    min-height: 15.5rem;
     background: rgb(2, 151, 2);
     border-radius: 5%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    border: 1rem solid rgb(2, 151, 2);
 }
 
 .grid-container {
@@ -139,6 +139,38 @@ h3 {
     height: 30vw;
     min-height: 12rem;
     margin-bottom: 0;
+}
+
+#dashboard {
+    width: 30vw;
+    min-width: 12rem;
+    height: 6vw;
+    min-height: 2.4rem;
+    background-color: rgb(2, 151, 2);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+#left-knob, #right-knob {
+    width: 5vw;
+    min-width: 2rem;
+    height: 5vw;
+    height: 2rem;
+    background-color: white;
+    border-right: 1vw solid rgb(231, 231, 231);
+    border-bottom: 1vw solid rgb(231, 231, 231);
+    border-radius: 50%;
+}
+
+#brand {
+    font-family: 'Reenie Beanie';
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 0.2rem;
+    text-shadow: 1.25px 1.25px goldenrod;
+    color: gold;
+    align-self: flex-end;
 }
 
 img {
