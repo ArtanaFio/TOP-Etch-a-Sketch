@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 html {
     font-size: 20pt;
+    font-family: sans-serif;
 }
 
 * {
@@ -100,17 +102,15 @@ body {
 h1 {
     margin: 5vmin 0;
     padding: 3.5vmax;
-    font-size: 5vmax;
-    font-weight: bold;
+    font-family: 'Reenie Beanie';
+    font-size: 6vmax;
+    font-weight: normal;
     color: rgb(104, 247, 104);
-    text-shadow: 0.4vmin 0.4vmin rgb(69, 158, 69);
-    text-decoration: 0.3vmax underline wavy;
-    text-underline-offset: 0.3vmax;
-    letter-spacing: 0.4vmin;
+    text-shadow: 0.3vmin 0.3vmin rgb(69, 158, 69);
+    letter-spacing: 1vmin;
     background-color:rgb(230, 250, 230);
     border: 0.2rem solid rgb(104, 247, 104);
     border-radius: 50%;
-    
 }
 
 h3 {
@@ -154,9 +154,9 @@ h3 {
 
 #left-knob, #right-knob {
     width: 5vw;
-    min-width: 2rem;
     height: 5vw;
-    height: 2rem;
+    min-width: 50px;
+    min-height: 50px;
     background-color: white;
     border-right: 1vw solid rgb(231, 231, 231);
     border-bottom: 1vw solid rgb(231, 231, 231);
@@ -170,12 +170,7 @@ h3 {
     letter-spacing: 0.2rem;
     text-shadow: 1.25px 1.25px goldenrod;
     color: gold;
-    align-self: flex-end;
-}
-
-img {
-    width: 33vw;
-    min-width: 13rem;
+    align-self: center;
 }
 
 .small-div {
@@ -183,39 +178,51 @@ img {
     box-shadow: inset 0.5px 0.5px rgb(213, 247, 213), inset -0.5px -0.5px rgb(213, 247, 213);
 }
 
+.play-area {
+    background-color: rgb(117, 196, 117);
+    border:5px solid rgb(69, 158, 69);
+    padding: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.add-gap {
+    gap: 10px;
+}
+
 .selections {
     font-size: 1rem;
+    font-weight: bold;
     padding: 0.25rem;
-    border-radius: 5%;
+    border-radius: 5px;
+    width: 7rem;
+    cursor: pointer;
 }
 
-.options,
-.grid-erase {
-    width: 14rem;
+.separate {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    box-shadow: inset -5px -5px 5px 5px palegreen, inset 5px 5px 5px 5px palegreen;
-}
-
-.grid-erase {
-    justify-content: space-around;
-    background-color:rgba(69, 158, 69, 0.322);
-    padding: 0.75rem 0;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 4px solid rgb(2, 151, 2);
 }
 
 .options {
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 #pixels {
     color: rgb(69, 158, 69);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(69, 158, 69);
-    font-weight: bold;
-    letter-spacing: 0.2rem;
-    background-color: rgb(201, 247, 201);
-    border-left-color:rgb(201, 247, 201);
-    border-top-color:rgb(201, 247, 201);
+    background-color: rgb(158, 255, 158);
+    border-left-color:rgb(158, 255, 158);
+    border-top-color:rgb(158, 255, 158);
     border-bottom-color:rgb(49, 252, 49);
     border-right-color:rgb(49, 252, 49);
 }
@@ -236,15 +243,13 @@ img {
 #clear {
     background-color:rgb(69, 158, 69);
     color: white;
-    border-left-color:rgb(2, 151, 2);
-    border-top-color:rgb(2, 151, 2);
-    border-bottom-color:rgb(49, 252, 49);
-    border-right-color:rgb(49, 252, 49);
+    border-color: rgb(69, 158, 69);
     display: none;
 }
 
 #clear:hover {
-    background-color:rgb(104, 247, 104);
+    border-color: rgb(104, 247, 104);
+    background-color: rgb(104, 247, 104);
 }
 
 #colors {
@@ -255,15 +260,45 @@ img {
 
 #colors:hover {
     border-color: white;
+    -webkit-animation: flow 0.75s ease-out;
+    -webkit-animation-iteration-count: infinite;
 }
 
+
+@-webkit-keyframes flow {
+    0% {
+        background-image:linear-gradient(to right, #ff008c, orange, yellow, lime, cyan, #c567fc, hotpink);
+    }
+    17% {
+        background-image:linear-gradient(to right, hotpink, #ff008c, orange, yellow, lime, cyan, #c567fc);
+    }
+    33% {
+        background-image:linear-gradient(to right, #c567fc, hotpink, #ff008c, orange, yellow, lime, cyan);
+    }
+    50% {
+        background-image:linear-gradient(to right, cyan, #c567fc, hotpink, #ff008c, orange, yellow, lime);
+    }
+    67% {
+        background-image:linear-gradient(to right, lime, cyan, #c567fc, hotpink, #ff008c, orange, yellow);
+    }
+    83% {
+        background-image:linear-gradient(to right, yellow, lime, cyan, #c567fc, hotpink, #ff008c, orange);
+    }
+    100% {
+        background-image:linear-gradient(to right, orange, yellow, lime, cyan, #c567fc, hotpink, #ff008c);
+    }
+}
+
+
 #original {
-    background-color: white;
-    color: lime;
+    color: white;
+    background-color: lime;
     border-color: transparent;
 }
 
 #original:hover {
+    background-color: white;
+    color: lime;
     border-color: lime;
 }
 
@@ -278,3 +313,32 @@ img {
     color: white;
     background-image: linear-gradient(to right, black, grey, black);
 }
+
+footer {
+    font-family: "Playfair Display";
+    font-size: 0.75rem;
+    width: 100%;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+footer p {
+    margin: 0;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+a {
+    color: palegreen;
+}
+
+/*
+@media(max-width: 400px) {
+    .play-area {
+        display: none;
+    }
+}*/

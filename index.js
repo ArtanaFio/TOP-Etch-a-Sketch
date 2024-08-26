@@ -4,6 +4,7 @@ let element;
 const startButton = document.getElementById('start');
 const invisibleElements = document.querySelectorAll('.none');
 const sketchSide = document.querySelector('.sketch');
+const playButtons = document.getElementById("play-buttons");
 const functionButtons = document.getElementById('functions');
 
 startButton.addEventListener('click', () => {
@@ -11,7 +12,7 @@ startButton.addEventListener('click', () => {
     invisibleElements.forEach((element) => {
         element.classList.remove('none');
         sketchSide.classList.add('flex');
-        functionButtons.classList.add('grid-erase');
+        playButtons.classList.add('play-area');
     })
 })
 
@@ -23,6 +24,7 @@ pixelButton.addEventListener('click', () => {
     console.log("You're using original color");
     container.innerHTML = '';
     directions.classList.add('none');
+    playButtons.classList.add('add-gap');
 
     let dimension;
 
@@ -33,6 +35,7 @@ pixelButton.addEventListener('click', () => {
             dimension = parseInt(ask);
 
             if (!isNaN(dimension) && dimension >= 1 && dimension <=100) {
+                functionButtons.classList.add('separate');
                 break;
             } else {
                 alert("Please enter a number between 1 and 100.");
@@ -149,3 +152,11 @@ pixelButton.addEventListener('click', () => {
         });
     });
 })
+
+function updateCopyrightYear() {
+    const copyrightYear = document.querySelector(".year");
+
+    copyrightYear.textContent = new Date().getFullYear();
+};
+updateCopyrightYear();
+

@@ -8,19 +8,22 @@
         <script src="index.js" defer></script>
     </head>
     <body>
-        <section class="left">
+        <div class="left">
             <header><h1>Etch-a-Sketch</h1></header>
             <button type="button" id="start">Ready to draw?</button>
             <h3 class="none">Choose the dimensions of your square grid by pressing the button below!</h3>
-            <section id="functions" class="none">
-                <button type="button" id="pixels" class="selections">New Grid</button>
-                <button type="button" id="clear" class="selections opt">Erase</button></section>
-            <section class="options none">
-                <button type="button" id="original" class="selections opt">Original</button>
-                <button type="button" id="colors" class="selections opt">Rainbow!</button>
-                <button type="button" id="darken" class="selections opt">Pencil</button>
-            </section>
-        </section>
+            <div id="play-buttons">
+                <div id="functions" class="none">
+                    <button type="button" id="pixels" class="selections">New Grid</button>
+                    <button type="button" id="clear" class="selections opt">Erase</button>
+                </div>
+                <div class="options none">
+                    <button type="button" id="original" class="selections opt">Original</button>
+                    <button type="button" id="colors" class="selections opt">Rainbow!</button>
+                    <button type="button" id="darken" class="selections opt">Pencil</button>
+                </div>
+            </div>
+        </div>
         <div class="sketch none">
             <div class="borders">
                 <div id="screen">
@@ -31,8 +34,10 @@
                     <div id="brand">Etch-a-Sketch</div>
                     <div id="right-knob"></div>
                 </div>
-            <!--<img alt="Etch-a-Sketch display" src="bottom_display.png">-->
             </div>
         </div>
+        <footer>
+            <p>Created by "ArtanaFio" on <a href="https://github.com/ArtanaFio/" target="_blank">Github</a> &#169 <span class="year"></span></p>
+        </footer>
     </body>
 </html>
