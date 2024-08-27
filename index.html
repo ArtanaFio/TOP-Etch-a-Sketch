@@ -8,6 +8,22 @@
         <script src="index.js" defer></script>
     </head>
     <body>
+        <div id="grid-modal">
+            <div id="modal-content">
+                <form action="">
+                    <fieldset>
+                        <div id="label-input">
+                            <label for="dimension">How many squares do you want in each column and row?</label>
+                            <input type="text" id="dimension" placeholder="0" />
+                        </div>
+                        <div id="cancel-submit">
+                            <button type="button" id="cancel">Cancel</button>
+                            <button type="button" id="submit">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
         <div class="left">
             <header><h1>Etch-a-Sketch</h1></header>
             <button type="button" id="start">Ready to draw?</button>
@@ -19,7 +35,7 @@
                 </div>
                 <div class="options none">
                     <button type="button" id="original" class="selections opt">Original</button>
-                    <button type="button" id="colors" class="selections opt">Rainbow!</button>
+                    <button type="button" id="colors" class="selections opt">Rainbow</button>
                     <button type="button" id="darken" class="selections opt">Pencil</button>
                 </div>
             </div>

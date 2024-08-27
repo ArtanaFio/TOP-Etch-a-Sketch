@@ -1,5 +1,9 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                // Create a 16 x 16 grid of div elements inside "grid-container"
 let element;
+let dimension;
+
+const gridModal = document.getElementById('grid-modal');
+gridModal.classList.add('closed');
 
 const startButton = document.getElementById('start');
 const invisibleElements = document.querySelectorAll('.none');
@@ -13,30 +17,48 @@ startButton.addEventListener('click', () => {
         element.classList.remove('none');
         sketchSide.classList.add('flex');
         playButtons.classList.add('play-area');
+        if (window.innerWidth <=400) {
+            playButtons.style.backgroundColor = "transparent";
+            playButtons.style.border = "none";
+        }
     })
 })
 
 const pixelButton = document.getElementById('pixels');
 const container = document.querySelector('.grid-container');
 const directions = document.querySelector('h3');
+const input = document.querySelector('input');
+const cancelButton = document.getElementById('cancel');
+const submitButton = document.getElementById('submit');
+
+cancelButton.addEventListener('click', () => {
+    gridModal.classList.add('closed');
+    gridModal.classList.remove('opened');
+})
 
 pixelButton.addEventListener('click', () => {
     console.log("You're using original color");
     container.innerHTML = '';
     directions.classList.add('none');
     playButtons.classList.add('add-gap');
+    gridModal.classList.add('opened');
+    gridModal.classList.remove('closed');
 
-    let dimension;
+    
 
-    while (true) {
-        const ask = prompt("How many squares do you want in each column and row?", "0");
-        
+    submitButton.addEventListener('click', () => {
+        const ask = input.value;
+            //const ask = prompt("How many squares do you want in each column and row?", "0");
+            
         if (/^\d+$/.test(ask)) {
             dimension = parseInt(ask);
 
             if (!isNaN(dimension) && dimension >= 1 && dimension <=100) {
                 functionButtons.classList.add('separate');
-                break;
+                gridModal.classList.add('closed');
+                gridModal.classList.remove('opened');
+                console.log("This is the grid's dimensions: " + dimension + " x " + dimension);
+                createSketchPad();
             } else {
                 alert("Please enter a number between 1 and 100.");
                 console.log("invalid number");
@@ -45,10 +67,12 @@ pixelButton.addEventListener('click', () => {
             console.log("Not a number")
             alert("Please enter a valid number.");
         }
+    });
+
+    if (window.innerWidth <= 400) {
+        playButtons.style.border = "2px dashed hotpink";
     }
-    
-    console.log("This is the grid's dimensions: " + dimension + " x " + dimension);
-    
+
     const screen = document.getElementById("screen");
     const appearButtons = document.querySelectorAll('.opt');
     const clearButton = document.getElementById('clear');
@@ -56,7 +80,7 @@ pixelButton.addEventListener('click', () => {
     const rainbowButton = document.getElementById('colors');
     const originalButton = document.getElementById('original');
     const pencilButton = document.getElementById('darken');
-
+    
     function createSketchPad() {
         screen.appendChild(container);
         functionButtons.appendChild(clearButton);
@@ -77,10 +101,8 @@ pixelButton.addEventListener('click', () => {
             element.style.backgroundColor = "white";
             container.appendChild(element);
         }
-    }
-    createSketchPad();
 
-    const divs = document.querySelectorAll('.small-div');
+        const divs = document.querySelectorAll('.small-div');
 
     divs.forEach((div) => {
         div.addEventListener('mouseover', () => {
@@ -151,6 +173,8 @@ pixelButton.addEventListener('click', () => {
             });
         });
     });
+    }
+    createSketchPad();    
 })
 
 function updateCopyrightYear() {
@@ -159,4 +183,8 @@ function updateCopyrightYear() {
     copyrightYear.textContent = new Date().getFullYear();
 };
 updateCopyrightYear();
+
+function changeLayout() {
+    
+}
 
